@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="portfolio style.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Icons Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page Title -->
+    <title>Software Development</title>
+</head>
+
+<body>
+    <header>
+        <div class="Header">
+            <div class="Brow"></div>
+            <div class="Greeting">Unit 12</div>
+            <div class="Title">Software Development</div>
+            <div class="Points">
+                <ul>
+                    <li>Use of Software</li>
+                    <li>Software Design</li>
+                    <li>Software Development</li>
+                    <li>Software Review</li>
+                </ul>
+            </div>
+            <div class="Buttons">
+                <a href="home page.php">Home Page</a>
+                <a href="#My_Projects">My Projects</a>
+            </div>
+            <img class="Image" src="Assets/U12 Cover.png">
+        </div>
+    </header>
+    <main>
+
+      <div class="Unit_Content">
+        <div class="Unit_Content_Heading">Unit Content</div>
+        <div class="Unit_Content_Subheading">Learn about the work I have done</div>
+      </div>
+      <div class="Content">
+        <div class="Content_A_B">
+          <div class="Aims Aim1">
+            <div class="AimNumber">Learning Aim "A"</div>
+            <div class="AimPurpose">
+              <div class="AimHeading">Use of Software</div>
+              <div class="AimContent">The first aim of the unit was to provide some inforamtion on how software programs are used and evaluate the characteristics of the programs. A blog post was created to achieve this criteria evaluating two different programs</div>
+            </div>
+          </div>
+          <div class="Aims Aim2">
+            <div class="AimNumber">Learning Aim "B"</div>
+            <div class="AimPurpose">
+              <div class="AimHeading">Software Design</div>
+              <div class="AimContent">The second aim was to produce a design for a software program that would match the customer's criteria and purpose and be working properly. A blog post has been produced to achieve this point declaring all the functionalities to be used</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Content_C_D">
+          <div class="Aims Aim3">
+            <div class="AimNumber">Learning Aim "C"</div>
+            <div class="AimPurpose">
+              <div class="AimHeading">Software Development</div>
+              <div class="AimContent">Then, I had to develop the program specified in my design and test it against the criteria I have provided in the documentation, fixing any errors. The program was developed successfully and was described in the blog</div>
+            </div>
+          </div>
+          <div class="Aims Aim4">
+            <div class="AimNumber">Learning Aim "D"</div>
+            <div class="AimPurpose">
+              <div class="AimHeading">Software Review</div>
+              <div class="AimContent">The final step in the development phase was to review my program against the design I provided, justifying my choices, refining the solution and suggesting any improvements. Another blog post was written to evidence the successful completion of the unit</div>
+            </div>
+          </div>
+        </div>
+        <div class="Download_Button">
+          <a href="https://s1mplecoding.blogspot.com/">View my Work</a>
+        </div>
+      </div>
+        
+        <div class="My_Projects" id="My_Projects">
+            <div class="My_Projects_Heading">My other Projects</div>
+            <div class="My_Projects_Subheading">Hover over the Cards to discover the other work I've done</div>
+            <div class="Projects">
+                <div class="Project Project1" id="Project1">
+                    <div class="container">
+                     <img id="img1" src="Assets/U9.png">
+                    </div>
+                    <div class="details">
+                     <h3>Spreadsheet Development</h3>
+                     <div class="link">
+                      <a id="link1" href="U9 page.html"> </a>
+                     </div>
+                    </div>
+                   </div>
+                <div class="Project Project3" id="Project3">
+                 <div class="container">
+                  <img id="img3" src="Assets/U13.png">
+                 </div>
+                 <div class="details">
+                  <h3>Website Development</h3>
+                  <div class="link">
+                   <a id="link3" href="#"> </a>
+                  </div>
+                 </div>
+                </div>
+                <div class="Project Project4" id="Project4">
+                 <div class="container">
+                  <img id="img4" src="Assets/U14.png">
+                 </div>
+                 <div class="details">
+                  <h3>Hardware Maintenance</h3>
+                  <div class="link">
+                   <a id="link4" href="#"> </a>
+                  </div>
+                 </div>
+                </div>
+                <div class="Project Project5" id="Project5">
+                 <div class="container">
+                  <img id="img5" src="Assets/U15.jpg">
+                 </div>
+                 <div class="details">
+                  <h3>Software Maintenance</h3>
+                  <div class="link">
+                   <a id="link5" href="#"> </a>
+                  </div>
+                 </div>
+                </div>
+              </div>
+        </div>
+ <!-- Card Scripts -->
+  <!-- 1st Card Script -->
+  <script>
+    document.getElementById("Project1").onmouseover = function() {HoverFunction1()};
+    document.getElementById("Project1").onmouseout = function() {OutFunction1()};
+   
+   function HoverFunction1() {
+     document.getElementById("link1").href = "U9 Page.html";
+     document.getElementById("link1").innerHTML = "View My Work Here";
+    
+     document.getElementById("img1").style.display = "none";
+   }
+   function OutFunction1() { 
+     document.getElementById("link1").href = " ";
+     document.getElementById("link1").innerHTML = " ";
+     
+     document.getElementById("img1").style.display = "block";
+   }
+   </script>
+ 
+ <!-- 3rd Card Script -->
+ <script>
+  document.getElementById("Project3").onmouseover = function() {HoverFunction3()};
+  document.getElementById("Project3").onmouseout = function() {OutFunction3()};
+ 
+ function HoverFunction3() {
+   document.getElementById("link3").href = "U13 page.html";
+   document.getElementById("link3").innerHTML = "View My Work Here";
+  
+   document.getElementById("img3").style.display = "none";
+ }
+ function OutFunction3() { 
+   document.getElementById("link3").href = " ";
+   document.getElementById("link3").innerHTML = " ";
+   
+   document.getElementById("img3").style.display = "block";
+ }
+ </script>
+ 
+ <!-- 4th Card Script -->
+ <script>
+  document.getElementById("Project4").onmouseover = function() {HoverFunction4()};
+  document.getElementById("Project4").onmouseout = function() {OutFunction4()};
+ 
+ function HoverFunction4() {
+   document.getElementById("link4").href = "U14 page.html";
+   document.getElementById("link4").innerHTML = "View My Work Here";
+  
+   document.getElementById("img4").style.display = "none";
+ }
+ function OutFunction4() { 
+   document.getElementById("link4").href = " ";
+   document.getElementById("link4").innerHTML = " ";
+   
+   document.getElementById("img4").style.display = "block";
+ }
+ </script>
+ 
+ <!-- 5th Card Script -->
+ <script>
+  document.getElementById("Project5").onmouseover = function() {HoverFunction5()};
+  document.getElementById("Project5").onmouseout = function() {OutFunction5()};
+ 
+ function HoverFunction5() {
+   document.getElementById("link5").href = "U15 page.html";
+   document.getElementById("link5").innerHTML = "View My Work Here";
+  
+   document.getElementById("img5").style.display = "none";
+ }
+ function OutFunction5() { 
+   document.getElementById("link5").href = " ";
+   document.getElementById("link5").innerHTML = " ";
+   
+   document.getElementById("img5").style.display = "block";
+ }
+ </script>
+
+
+
+</main>
+</body>
+</html>

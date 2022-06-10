@@ -1,0 +1,799 @@
+*{
+	margin: 0;
+    padding: 0;	
+	box-sizing: border-box;
+	scroll-behavior: smooth !important;
+}
+body{
+    background-color: #fff0f0;
+}
+.Header{
+    background-image: linear-gradient(#F0F8FF, #F0FFF0);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(25px, auto);
+    grid-template-areas: 
+    ". . . . . . . . . . . ."
+    "gr gr gr gr gr gr gr gr gr gr gr gr"
+    "tl tl tl tl tl tl tl tl tl tl tl tl"
+    ". . . . . . . . . . . ."
+    "pt pt pt pt pt pt pt pt pt pt pt pt"
+    ". . . . . . . . . . . ."
+    "bt bt bt bt bt bt bt bt bt bt bt bt"
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . im im im im im im im im . .";
+}
+.Greeting{
+    grid-area: gr;
+    text-align: center;
+    font-size: 22px;
+	font-family: 'Comfortaa', cursive;
+    padding: 10px 10px;
+}
+.Title{
+    grid-area: tl;
+    text-align: center;
+	font-size: 45px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 700;
+    padding: 0px;
+}
+.Points{
+    grid-area: pt;
+    text-align: center;
+	font-size: 25px;
+	font-family: 'Comfortaa', cursive;
+    padding: 15px;
+}
+.Points ul{
+	list-style-position: inside;
+}
+.Buttons{
+    grid-area: bt;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.Buttons a{
+    color: #330063;
+    background-color: #FFFFFF;
+    border: 2px solid #330063;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 30px;
+    margin-top: 5px;
+    transition: .3s;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.Buttons a:hover{
+    color: #FFFFFF;
+    background-color: #330063;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+}
+.Buttons a:active{
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+}
+.Image{
+    grid-area: im;
+    object-fit: cover;
+    border: 3px solid #330063;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+@keyframes MoveFromRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+}
+@keyframes MoveFromLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes Appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@media (min-width: 1000px){
+    .Header{
+        grid-auto-rows: minmax(50px, auto);
+        grid-template-areas: 
+        "bw bw bw bw bw bw bw bw bw bw bw bw"
+        ". . . . . . . . . . . ."
+        ". . . . . . . im im im im ."
+        ". . gr gr gr . . im im im im ."
+        ". . tl tl tl tl . im im im im ."
+        ". . pt pt pt pt . im im im im ."
+        ". . bt bt bt bt . im im im im ."
+        ". . . . . . . im im im im .";
+    }
+    .Image{
+        height: 100%;
+        animation: MoveFromRight 2s, ease-in;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;
+    }
+    .Points{
+        text-align: left;
+        animation: MoveFromLeft 2s, ease-in;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;
+    }
+    .Title{
+        text-align: left;
+        animation: MoveFromLeft 2s, ease-in;
+        animation-delay: .3s;
+        animation-fill-mode: backwards;
+    }
+    .Greeting{
+        text-align: left;
+        animation: MoveFromLeft 2.2s, ease-in;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;
+    }
+    .Buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        animation: Appear 2.5s, ease-out;
+        animation-delay: 1s;
+        animation-fill-mode: backwards;
+    }
+    .Brow{
+        grid-area: bw;
+        position: absolute;
+        width: 100%;
+        height: 7%;
+        background-color: #330063;
+        border-bottom-right-radius: 10%;
+        border-bottom-left-radius: 90%;
+    }
+}
+/*About Me Section*/
+.About_Me{
+    background-image: linear-gradient(#F0FFF0, #f8f0ff);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(25px auto);
+    grid-template-areas: 
+    ". . . . . . . . . . . ."
+    ". . . . hd hd hd hd . . . ."
+    ". . ig ig ig ig ig ig ig ig . ."
+    ". in in in in in in in in in in ."
+    ". . . . . . . . . . . .";
+}
+.About_Me_Heading{
+    margin-top: 30px;
+	margin-bottom: 30px;
+    grid-area: hd;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    padding: 15px;
+    border-left: 10px solid #330063;
+    border-right: 10px solid #330063;
+    border-radius: 10px;
+}
+.About_Me_Image{
+    margin-top: 10px;
+    grid-area: ig;
+    object-fit: cover;
+    box-shadow: 10px 10px #330063;
+    border-radius: 20px;
+    width: 100%;
+    height: 95%;
+}
+.About_Me_Info{
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    grid-area: in;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(25px auto);
+    grid-template-areas:
+    "on"
+    "tw"
+    "th"
+    "fo";
+}
+.About_Me p {
+    margin-top: 10px;
+}
+.p1{
+    grid-area: on;
+}
+.p2{
+    grid-area: tw;
+}
+.p3{
+    grid-area: th;
+}
+.p4{
+    grid-area: fo;
+}
+
+@media (min-width: 1000px){
+    .About_Me{
+        grid-template-areas: 
+        "hd hd hd . . . . . . . . ."
+        ". ig ig ig . in in in in in in ."
+    }
+    .About_Me_Image{
+        margin-left: 20px;
+        width: 100%;
+        height: 95%;
+        animation: Appear 2.5s, ease-in;
+        animation-delay: .5s;
+        animation-fill-mode: backwards;
+    }
+    .About_Me_Info{
+        margin-top: 50px;
+        margin-left: 60px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        animation: MoveFromLeft 2s, ease-in;
+        animation-delay: .3s;
+        animation-fill-mode: backwards;
+    }
+	.About_Me_Heading{
+		text-align: left;
+		margin-left: 120px;
+        animation: MoveFromRight 2s, ease-in;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;
+	}
+}
+@media(min-width: 840px){
+    .About_Me_Heading{
+        border-right: none;
+        font-size: 28px;
+    }
+}
+
+/*Unit Content Section*/
+.Unit_Content{
+    background-color: #F0FFF0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(50px, 1fr);
+    grid-template-areas: 
+    ". . . . . . . . . . . ."
+    ". . . he he he he he he . . ."
+    ". . se se se se se se se se . ."
+    ". . . . . . . . . . . .";
+}
+.Unit_Content_Heading{
+    grid-area: he;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    padding: 15px;
+    border-left: 10px solid #330063;
+    border-right: 10px solid #330063;
+    border-radius: 10px;
+    animation: MoveFromLeft 2s, ease-in;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+}
+.Unit_Content_Subheading{
+    grid-area: se;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    animation: MoveFromRight 2s, ease-in;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+}
+
+/*Content Style*/
+.Content{
+    background-image: linear-gradient(#F0FFF0, #f8f0ff);
+}
+.Content_A_B{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 140px;
+    width: 70%;
+    align-items: stretch;
+    height: auto;
+    animation: Appear 2.5s, ease-in;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+}
+.Content_C_D{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: 230px;
+    align-items: stretch;
+    height: auto;
+    animation: Appear 2.5s, ease-in;
+    animation-delay: 2.5s;
+    animation-fill-mode: backwards;
+}
+.Aims{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    border-radius: 20px;
+    background-color: #2E005A;
+    color: #FFFFFF;
+}
+.AimNumber{
+    font-family: 'Comfortaa', cursive;
+    font-size: 22px;
+    border-radius: 20px 0px 0px 20px;
+    align-self: center;
+    padding: 60px 20px;
+    border-right: 4px solid #f8c14d;
+    max-width: 180px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.AimPurpose{
+    background-color: #330063;
+    max-width: 230px;
+    border-radius: 0px 20px 20px 0px;
+}
+.AimHeading{
+    height: 50px;
+    padding: 5px;
+    border-bottom: 2px solid #FAD381;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-size: 19px;
+    color: #E6E6E6;
+}
+.AimContent{
+    padding: 10px;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    color: #B3B3B3;
+}
+.Download_Button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    padding: 30px;
+    transition: .3s;
+}
+.Download_Button a{
+    border-radius: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Comfortaa', cursive;
+    color:#330063;
+    border: 2px solid #330063;
+    transition: .3s;
+}
+.Download_Button a:hover{
+    color: #FFFFFF;
+    background-color: #330063;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+}
+.Download_Button a:active{
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+}
+
+@media(min-width: 840px){
+    .Unit_Content_Heading{
+        border-right: none;
+        font-size: 28px;
+    }
+    .Unit_Content_Subheading{
+        margin-left: 50px;
+        text-align: left;
+        font-size: 24px;
+    }
+    .Unit_Content{
+        grid-template-areas: 
+        ". . . . . . . . . . . ."
+        ". he he . . . . . . . . ."
+        "se se se se se se se se . . . ."
+        ". . . . . . . . . . . .";
+    }
+}
+@media(max-width: 840px){
+    .Aims{
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+@media(max-width: 1000px){
+    .Unit_Content_Heading{
+        animation: MoveFromRight 2s, ease-in;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;
+    }
+    .Unit_Content_Subheading{
+        animation: MoveFromLeft 2s, ease-in;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;
+    }
+    .Content_A_B{
+        margin: auto;
+        width: 95%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .Content_C_D{
+        margin: auto;
+        margin-top: 20px;
+        width: 95%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .AimNumber{
+        font-family: 'Comfortaa', cursive;
+        font-size: 20px;
+        border-radius: 20px 0px 0px 20px;
+        align-self: center;
+        border-right: 4px solid #f8c14d;
+        max-width: 120px;
+        font-weight: 700;
+        margin-right: 5px;
+    }
+    .AimPurpose{
+        max-width: 240px;
+    }
+}
+
+/*My Projects*/
+.My_Projects{
+    background-image: linear-gradient(#F8f0ff, #fff0ff);
+    display: grid;
+    grid-template-columns: repeat(12 1fr);
+    grid-auto-rows: minmax(50px 1fr);
+    grid-template-areas: 
+    ". . . . . hd hd . . . . ."
+    ". . . . shd shd shd shd . . . ."
+    "pr pr pr pr pr pr pr pr pr pr pr pr";
+}
+.My_Projects_Heading{
+    grid-area: hd;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    padding: 15px;
+    border-left: 10px solid #330063;
+    border-right: 10px solid #330063;
+    border-radius: 10px;
+}
+.My_Projects_Subheading{
+    text-align: center;
+    grid-area: shd;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+.Projects{
+    grid-area: pr;
+	width: 90%;
+	margin: auto;
+	margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    padding: 20px;
+    grid-gap: 20px;
+}
+.Project{
+    background-color: #6311AF;
+    border-radius: 20px;
+	box-shadow: 10px 10px #2B0053;
+	box-shadow: none;
+	transition: .7s;
+	height: 330px;
+}
+.container{
+    position: relative;
+	display: block;
+	transition: .7s;
+}
+img{
+    width: 100%;
+	height: 200px;
+	object-fit: cover;
+    border-radius: 20px 20px 0 0;
+	z-index: 3;
+}
+.details{
+    padding: 20px 10px;
+}
+.details>h3{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 15px 0;
+	font-family: 'Comfortaa', cursive;
+	text-align: center;
+}
+.Project:hover{
+	box-shadow: 10px 10px #2B0053;
+	transition: .7s;
+}
+
+.link{
+  text-align: center;
+}
+.link a{
+  color: #f8c14d;  
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  opacity: 1;
+  z-index: 4;
+}
+.link a:hover{
+	text-decoration: underline;
+}
+@media (min-width: 840px){
+    .My_Projects_Heading{
+        font-size: 28px;
+    }
+    .My_Projects_Subheading{
+        font-size: 24px;
+    }
+}
+/*Why Me Section*/
+.Why_Me{
+    background-image: linear-gradient(#fff0ff, #fff0f0);
+    display: grid;
+    grid-template-columns: repeat(12 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-areas: 
+    ". . . . . hd hd . . . . ."
+    ". . . . he he he he . . . ."
+    ". . . . . . . . . . . .";
+}
+.Why_Me_Heading{
+    grid-area: hd;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    padding: 15px;
+    border-left: 10px solid #330063;
+    border-right: 10px solid #330063;
+    border-radius: 10px;
+}
+.Why_Me_Subheading{
+    grid-area: he;
+    text-align: center;
+    grid-area: he;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+.Why_Me_Points{
+    background-color: #fff0f0;
+    margin: auto;
+    width: 75%;
+    grid-area: wp;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-auto-rows: minmax(250px auto);
+}
+.Point{
+    height: 250px;
+    background-color: #6311AF;
+    color: #FFFFFF;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: .7s;
+}
+.PointHeader{
+   padding: 20px;
+   background-color: #330063;
+   border-radius: 25px;
+   text-align: center;
+   align-self: stretch;
+   font-family: 'Comfortaa', cursive;
+   font-size: 18px;
+   font-weight: 700;
+   transition: .7s;
+}
+.PointInfo{
+    display: none;
+    background-color: #330063;
+    padding: 10px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    transition: .7s;
+}
+
+@media (min-width: 840px){
+    .Why_Me_Heading{
+        font-size: 28px;
+    }
+    .Why_Me_Subheading{
+        font-size: 24px;
+    }
+    
+    .Why_Me_Points{
+        margin-left: 50px;
+        grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+        width: 50%;
+    }
+    
+}
+@media (min-width: 1250px){
+    .Why_Me_Points{
+        width: 40%;
+    }
+}
+@media (min-width: 1600px){
+    .Why_Me_Points{
+        grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    }
+}
+@media (max-width: 400px){
+    .Why_Me_Points{
+        width: 90%;
+        margin: auto;
+    }
+}
+/*Contact Form Style*/
+.Contact_Form{
+    align-self: stretch;
+    margin-right: 100px;
+    background-color: #E6D8D8;
+    width: 35%;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+}
+.FormHeading{
+    color: black;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 25px;
+    font-weight: 700;
+}
+input[type=text], input[type=email], select, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    width: 85%;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #330063;
+    margin-top: 5%;
+    resize: vertical;
+    display: block;
+	margin: auto;
+    margin-top: 10px;
+    resize: none;
+    border-radius: 5px;
+}
+input[type=submit]{
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid #330063;
+    color: #330063;
+    padding: 15px 30px;
+    font-size: 16px;
+    margin-top: 10px;
+    justify-content: center;
+    transition: .7s;
+    cursor: pointer;
+    display: block;
+	margin: auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+input[type=submit]:hover{
+    color: #FFFFFF;
+    background-color: #330063;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+}
+.Contact_Form label{
+    color: #595958;
+    display: block;
+    width: 85%;
+    text-align: left;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.dangerAlert{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    border-bottom: 2px solid #990000;
+    width: 70%;
+    font-size: 18px;
+}
+.successAlert{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    border-bottom: 2px solid #006851;
+    width: 70%;
+    font-size: 18px;
+}
+
+input[type=submit]:active{
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+}
+.Why_Me_Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+@media (max-width: 1150px) {
+    .Why_Me_Container{
+        justify-content: center;
+    }
+    .Contact_Form{
+        align-self: center;
+        margin: auto;
+        margin-top: 40px;
+        width: 90%;
+    }
+    .Why_Me_Points{
+        align-self: center;
+        margin: auto;
+    }
+}
